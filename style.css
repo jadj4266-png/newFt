@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #191919;
+  color: #cfcfcf;
+  font-family: Arial;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.puzzle-img {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05);
+}
+
+.answer {
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+.solution-text {
+  font-size: 34px;
+  color: #29b6f6;
+}
