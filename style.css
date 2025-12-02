@@ -20,9 +20,46 @@ body {
 .answer {
   font-size: 26px;
   margin-top: 20px;
+  display: none; /* اخفاء الإجابة في البداية */
 }
 
 .solution-text {
   font-size: 34px;
   color: #29b6f6;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* تصميم العداد */
+#countdown {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+}
+
+#count-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.circle-border {
+  width: 100%;
+  height: 100%;
+  border: 5px solid transparent;
+  border-top-color: #29b6f6; /* البوردر العمودي */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
