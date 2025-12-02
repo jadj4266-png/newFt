@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   answer.style.display = 'none';
 
   // بدء العد
-  let seconds = 3;
+  let seconds = 5;
   countText.textContent = seconds; // عرض الرقم الأول مباشرة
 
   const interval = setInterval(() => {
