@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // بدء العد
   let seconds = 5;
-  countText.textContent = seconds; // عرض الرقم الأول مباشرة
+   // countText.textContent = seconds; // عرض الرقم الأول مباشرة
 
   const interval = setInterval(() => {
     seconds--;
@@ -22,3 +22,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 });
+
