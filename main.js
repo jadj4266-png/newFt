@@ -88,8 +88,3 @@ document.documentElement.setAttribute("dir", dir);
     }
   }, 1000);
 });
-
-
-setTimeout(() => {
-  alert(userLang)
-},6000)
