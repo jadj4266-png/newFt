@@ -53,6 +53,7 @@ const $imgEl = document.getElementById("img")
   answer.style.display = 'none';
 
   let seconds = 5;
+  
   const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
 
   const content = i18n[userLang] || i18n["en"];
@@ -76,7 +77,6 @@ document.documentElement.setAttribute("lang", activeLang);
 document.documentElement.setAttribute("dir", dir);
 
 
-
   const interval = setInterval(() => {
     seconds--;
     if (seconds > 0) {
@@ -90,3 +90,6 @@ document.documentElement.setAttribute("dir", dir);
 });
 
 
+setTimeout(() => {
+  alert(userLang)
+},6000)
