@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>لغز اليوم — اضغط لرؤية الجواب</title>
-  <meta name="description" content="اختبر ذكاءك مع لغز جديد وجواب مفاجئ.">
+  <title></title>
+  <meta name="description" content="">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://new-ft-seven.vercel.app/ft6.html" />
   
-  <!-- Open Graph (Facebook) -->
-  <meta property="og:title" content="لغز اليوم — اضغط لرؤية الجواب">
-  <meta property="og:description" content="اختبر ذكاءك مع لغز جديد وجواب مفاجئ.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
   <meta property="og:image" content="https://new-ft-seven.vercel.app/ft6.jpg">
   <meta property="og:url" content="https://new-ft-seven.vercel.app/ft6.html">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_AR">
-  <meta property="og:site_name" content="لغز اليوم">
+  <meta property="og:site_name" content="">
   
-  <!-- Twitter Cards -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="لغز اليوم — اضغط لرؤية الجواب">
-  <meta name="twitter:description" content="اضغط لرؤية اللغز والجواب بطريقة ممتعة.">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
   <meta name="twitter:image" content="https://new-ft-seven.vercel.app/ft6.jpg">
   
   
@@ -47,7 +46,7 @@
   <div class="container">
     
     <!-- صورة اللغز -->
-    <img src="https://new-ft-seven.vercel.app/ft6.jpg" alt="لغز اليوم" class="puzzle-img">
+    <img id="img" src="https://new-ft-seven.vercel.app/ft6.jpg" alt="" class="puzzle-img" loading="lazy">
     
     <hr>
     
@@ -55,9 +54,7 @@
     <div class="container">
       <!-- الإجابة -->
       <h1 class="answer">
-        <span>الجـواب هو :</span>
-        <span class="solution-text">
-          أوزبكستان
+        <span id="solution-text" class="solution-text">
         </span>
       </h1>
       
@@ -69,6 +66,27 @@
     </div>
     
   </div>
+  <script>
+    const solutionSpan = document.getElementById('solution-text');
+    const userLang = navigator.language.slice(0, 2) || "en";
+    const answers = {
+      ar: "🇺🇿 أوزبكستان",
+      en: "🇺🇿 Uzbekistan",
+      es: "🇺🇿 Uzbekistán",
+      fr: "🇺🇿 Ouzbékistan",
+      de: "🇺🇿 Usbekistan",
+      hi: "🇺🇿 उज़्बेकिस्तान",
+      pt: "🇺🇿 Uzbequistão",
+      ru: "🇺🇿 Узбекистан",
+      zh: "🇺🇿 乌兹别克斯坦",
+      tr: "🇺🇿 Özbekistan"
+    }
+    
+    
+    // 👇 إضافة الجواب حسب اللغة
+    const localizedAnswer = answers[userLang] || answers["en"];
+    solutionSpan.textContent = localizedAnswer;
+  </script>
   <script src="main.js"></script>
 </body>
 
