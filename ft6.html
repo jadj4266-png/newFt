@@ -68,7 +68,8 @@
   </div>
   <script>
     const solutionSpan = document.getElementById('solution-text');
-    const userLang = navigator.language.slice(0, 2) || "en";
+    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
+
     const answers = {
       ar: "🇺🇿 أوزبكستان",
       en: "🇺🇿 Uzbekistan",

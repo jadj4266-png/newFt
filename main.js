@@ -53,8 +53,8 @@ const $imgEl = document.getElementById("img")
   answer.style.display = 'none';
 
   let seconds = 5;
+  const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
 
-  const userLang = navigator.language.slice(0,2) || "en";
   const content = i18n[userLang] || i18n["en"];
 
 
