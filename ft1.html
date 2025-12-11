@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>لغز اليوم — اضغط لرؤية الجواب</title>
-  <meta name="description" content="اختبر ذكاءك مع لغز جديد وجواب مفاجئ.">
+  <title></title>
+  <meta name="description" content="">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://new-ft-seven.vercel.app/ft1.html" />
   
-  <!-- Open Graph (Facebook) -->
-  <meta property="og:title" content="لغز اليوم — اضغط لرؤية الجواب">
-  <meta property="og:description" content="اختبر ذكاءك مع لغز جديد وجواب مفاجئ.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
   <meta property="og:image" content="https://new-ft-seven.vercel.app/ft1.jpg">
   <meta property="og:url" content="https://new-ft-seven.vercel.app/ft1.html">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_AR">
-  <meta property="og:site_name" content="لغز اليوم">
+  <meta property="og:site_name" content="">
   
-  <!-- Twitter Cards -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="لغز اليوم — اضغط لرؤية الجواب">
-  <meta name="twitter:description" content="اضغط لرؤية اللغز والجواب بطريقة ممتعة.">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:text:title" content=" ">
   <meta name="twitter:image" content="https://new-ft-seven.vercel.app/ft1.jpg">
   
   
@@ -36,10 +36,14 @@
   
   <!-- +++++++++++++++++++ -->
   
- <script>(function(s){s.dataset.zone='10310444',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- 
- <script>(function(s){s.dataset.zone='10310654',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- 
+  
+  <script>
+    (function(s) { s.dataset.zone = '10310444', s.src = 'https://groleegni.net/vignette.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
+  
+  <script>
+    (function(s) { s.dataset.zone = '10310654', s.src = 'https://gizokraijaw.net/vignette.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
   
   <!-- +++++++++++++++++++ -->
   
@@ -50,43 +54,49 @@
   <div class="container">
     
     <!-- صورة اللغز -->
-    <img src="https://new-ft-seven.vercel.app/ft1.jpg" alt="لغز اليوم" class="puzzle-img">
+    <img id="img" src="https://new-ft-seven.vercel.app/ft1.jpg" alt="" class="puzzle-img" loading="lazy">
     
     <hr>
     
     <!-- الجواب -->
-    <div>
+    <div class="container">
+      <!-- الإجابة -->
       <h1 class="answer">
-        <span>الجـواب هو :</span>
-        <span class="solution-text">
-          27
+        <span id="solution-text" class="solution-text">
         </span>
       </h1>
+      
+      <!-- عداد أخ للـ h1 -->
+      <div id="countdown">
+        <span id="count-text">5</span>
+        <div class="circle-border"></div>
+      </div>
     </div>
     
   </div>
-  
-  <hr />
-  <div style="direction: rtl;">
-    <h3>
-      في البداية نحدد قيمة كل رمز:
-    </h3>
-    <p>
-      1. الخبزة 🍩 + الخبزة 🍩 = 14 إذن قيمة الخبزة هي 7.
-    </p>
-    <p>
-      2. التاكو 🌮 + الخبزة 🍩 = 9، وبما أنّ الخبزة 7 تصبح قيمة التاكو 2.
-    </p>
-    <p>
-      3. الهوت دوغ 🌭 − التاكو 🌮 = 8، ومع قيمة التاكو 2 تكون قيمة الهوت دوغ 10.
-    </p>
-    <p>
-      الآن نحسب المعادلة الأخيرة مع مراعاة أولوية الضرب:
-    </p>
-    <p>
-      🍩 + 🌭 × 🌮 = 7 + (10 × 2) = 7 + 20 = 27.
-    </p>
-  </div>
+  <script>
+    const solutionSpan = document.getElementById('solution-text');
+    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
+    
+    const answers = {
+      ar: "🔥 شواء",
+      en: "🔥 Barbecue",
+      es: "🔥 Asado",
+      fr: "🔥 Barbecue",
+      de: "🔥 Grillen",
+      hi: "🔥 बारबेक्यू",
+      pt: "🔥 Churrasco",
+      ru: "🔥 Барбекю",
+      zh: "🔥 烧烤",
+      tr: "🔥 Mangal"
+    }
+    
+    
+    // 👇 إضافة الجواب حسب اللغة
+    const localizedAnswer = answers[userLang] || answers["en"];
+    solutionSpan.textContent = localizedAnswer;
+  </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
