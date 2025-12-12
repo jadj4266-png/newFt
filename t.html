@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Daily Puzzle — Tap to Reveal the Answer</title>
+  <meta name="description" content="A daily puzzle with a clickable image. Tap to reveal the answer in a fun way.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://new-ft-seven.vercel.app/t.html">
+
+  <!-- Open Graph (WhatsApp + Facebook) -->
+  <meta property="og:title" content="Daily Puzzle — Tap to Reveal the Answer">
+  <meta property="og:description" content="Tap to open the puzzle and reveal the answer in an engaging way.">
+  <meta property="og:image" content="https://new-ft-seven.vercel.app/t.jpeg">
+  <meta property="og:url" content="https://new-ft-seven.vercel.app/t.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Daily Puzzles">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daily Puzzle — Tap to Reveal the Answer">
+  <meta name="twitter:description" content="A fun puzzle with an answer revealed after the countdown.">
+  <meta name="twitter:image" content="https://new-ft-seven.vercel.app/t.jpeg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" type="text/css">
+
+  <!-- Ads -->
+  <script>(function(s){s.dataset.zone='10310444',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+  <script>(function(s){s.dataset.zone='10310654',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Puzzle Image -->
+    <img id="img" src="https://new-ft-seven.vercel.app/t.jpeg" alt="Daily Puzzle" class="puzzle-img" loading="lazy">
+
+    <hr>
+
+    <!-- Answer -->
+    <div class="container">
+      <h1 class="answer">
+        <span id="solution-text" class="solution-text"></span>
+      </h1>
+
+      <!-- Countdown -->
+      <div id="countdown">
+        <span id="count-text">5</span>
+        <div class="circle-border"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    const solutionSpan = document.getElementById('solution-text');
+    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
+
+    const answers = {
+  ar: "🔥 شواء",
+  en: "🔥 Barbecue",
+  es: "🔥 Asado",
+  fr: "🔥 Barbecue",
+  de: "🔥 Grillen",
+  hi: "🔥 बारबेक्यू",
+  pt: "🔥 Churrasco",
+  ru: "🔥 Барбекю",
+  zh: "🔥 烧烤",
+  tr: "🔥 Mangal"
+}
+
+    const localizedAnswer = answers[userLang] || answers["en"];
+    solutionSpan.textContent = localizedAnswer;
+  </script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
