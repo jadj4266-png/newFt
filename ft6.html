@@ -1,75 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title></title>
-  <meta name="description" content="">
-  
+
+  <title>لغز اليوم — اضغط لرؤية الحل</title>
+  <meta name="description" content="لغز جديد بصورة قابلة للضغط لرؤية الجواب.">
+
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://new-ft-seven.vercel.app/ft6.html" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
+  <link rel="canonical" href="https://new-ft-seven.vercel.app/ft6.html">
+
+  <!-- Open Graph (لـ واتساب + فيسبوك) -->
+  <meta property="og:title" content="لغز اليوم — اضغط لرؤية الحل">
+  <meta property="og:description" content="اضغط لفتح اللغز ورؤية الجواب بطريقة ممتعة.">
   <meta property="og:image" content="https://new-ft-seven.vercel.app/ft6.jpg">
   <meta property="og:url" content="https://new-ft-seven.vercel.app/ft6.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="">
-  
+  <meta property="og:site_name" content="ألغاز اليوم">
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:text:title" content=" ">
+  <meta name="twitter:title" content="لغز اليوم — اضغط لرؤية الحل">
+  <meta name="twitter:description" content="لغز ممتع مع إجابة تظهر بعد العدّ التنازلي.">
   <meta name="twitter:image" content="https://new-ft-seven.vercel.app/ft6.jpg">
-  
-  
-  
-  <!-- +++++++++++++++++++ -->
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css" type="text/css">
-  
-  
-  <!-- +++++++++++++++++++ -->
-  
-  
- <script>(function(s){s.dataset.zone='10310444',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- 
- <script>(function(s){s.dataset.zone='10310654',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-  
-  <!-- +++++++++++++++++++ -->
-  
+
+  <!-- الإعلانات -->
+  <script>(function(s){s.dataset.zone='10310444',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+  <script>(function(s){s.dataset.zone='10310654',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 </head>
 
 <body>
-  
+
   <div class="container">
-    
+
     <!-- صورة اللغز -->
-    <img id="img" src="https://new-ft-seven.vercel.app/ft6.jpg" alt="" class="puzzle-img" loading="lazy">
-    
+    <img id="img" src="https://new-ft-seven.vercel.app/ft6.jpg" alt="لغز اليوم" class="puzzle-img" loading="lazy">
+
     <hr>
-    
+
     <!-- الجواب -->
     <div class="container">
-      <!-- الإجابة -->
       <h1 class="answer">
-        <span id="solution-text" class="solution-text">
-        </span>
+        <span id="solution-text" class="solution-text"></span>
       </h1>
-      
-      <!-- عداد أخ للـ h1 -->
+
+      <!-- عداد -->
       <div id="countdown">
         <span id="count-text">5</span>
         <div class="circle-border"></div>
       </div>
     </div>
-    
+
   </div>
+
+  <!-- Script -->
   <script>
     const solutionSpan = document.getElementById('solution-text');
     const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
@@ -85,13 +75,12 @@
       ru: "🇺🇿 Узбекистан",
       zh: "🇺🇿 乌兹别克斯坦",
       tr: "🇺🇿 Özbekistan"
-    }
-    
-    
-    // 👇 إضافة الجواب حسب اللغة
+    };
+
     const localizedAnswer = answers[userLang] || answers["en"];
     solutionSpan.textContent = localizedAnswer;
   </script>
+
   <script src="main.js"></script>
 </body>
 
