@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+  <meta name="description" content="">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://new-ft-seven.vercel.app/a1.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://i.imgur.com/TjOcWEA.jpeg">
+  <meta property="og:url" content="https://new-ft-seven.vercel.app/a1.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://i.imgur.com/TjOcWEA.jpeg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" type="text/css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- صورة اللغز -->
+    <img id="img" src="https://i.imgur.com/TjOcWEA.jpeg" alt="" class="puzzle-img" loading="lazy">
+
+    <hr>
+
+    <!-- الجواب -->
+    <div class="container">
+      <!-- الإجابة -->
+      <h1 class="answer">
+        <span id="solution-text" class="solution-text"></span>
+      </h1>
+
+      <!-- عداد -->
+      <div id="countdown">
+        <span id="count-text">5</span>
+        <div class="circle-border"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const solutionSpan = document.getElementById('solution-text');
+    const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().slice(0, 2);
+
+    const answers = {
+      ar: "🔥 شواء",
+      en: "🔥 Barbecue",
+      es: "🔥 Asado",
+      fr: "🔥 Barbecue",
+      de: "🔥 Grillen",
+      hi: "🔥 बारबेक्यू",
+      pt: "🔥 Churrasco",
+      ru: "🔥 Барбекю",
+      zh: "🔥 烧烤",
+      tr: "🔥 Mangal"
+    };
+
+    const localizedAnswer = answers[userLang] || answers["en"];
+    solutionSpan.textContent = localizedAnswer;
+  </script>
+
+  <script src="main.js"></script>
+
+  <!-- سكربتات الإعلانات (نقلتُها من <head> إلى هنا) -->
+  <script>
+    (function (s) {
+      s.dataset.zone = '10310444',
+        s.src = 'https://groleegni.net/vignette.min.js'
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
+
+  <script>
+    (function (s) {
+      s.dataset.zone = '10310654',
+        s.src = 'https://gizokraijaw.net/vignette.min.js'
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
+
+</body>
+
+</html>
