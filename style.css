@@ -4,14 +4,17 @@ body {
   background: #191919;
   color: #cfcfcf;
   font-family: Arial;
-  text-align: center;
   width: 100vw;
   height: 100vh;
 
 }
 
+header > h2 {
+  padding: 5px 10px;
+}
+
 .puzzle-img {
-  margin-top: 20px;
+  margin-top: 5px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(255,255,255,0.05);
@@ -30,7 +33,7 @@ body {
 
 .container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 5px;
 }
 
 /* تصميم العداد */
