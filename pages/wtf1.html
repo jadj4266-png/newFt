@@ -8,6 +8,10 @@
   <title>Daily Puzzle — Tap to Reveal the Answer</title>
   <meta name="description" content="A daily puzzle with a clickable image. Tap to reveal the answer in a fun way.">
   
+  <link rel="stylesheet" href="../style.css" type="text/css">
+  <link rel="stylesheet" href="../icon.css" type="text/css" media="all" />
+  
+  
   <!-- Canonical URL -->
   <link rel="canonical" href="https://new-ft-seven.vercel.app/wtf1.html">
   
@@ -25,24 +29,17 @@
   <meta name="twitter:description" content="A fun puzzle with an answer revealed after the countdown.">
   <meta name="twitter:image" content="https://i.imgur.com/TjOcWEA.jpeg">
   
-  <!-- CSS -->
-  <link rel="stylesheet" href="../style.css" type="text/css">
   
   <!-- Ads -->
-  <script>
-    (function(s) { s.dataset.zone = '10310444', s.src = 'https://groleegni.net/vignette.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-  </script>
-  
-  <script>
-    (function(s) { s.dataset.zone = '10310654', s.src = 'https://gizokraijaw.net/vignette.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-  </script>
-  
+
 </head>
 
 <body>
   
-  <header>
-    <h2 id="question"></h2>
+  <header id="header" class="heard">
+    <p id="question"></p>
+   <i class="icon-share2" id="iconShare"></i>
+    
   </header>
   
   
@@ -51,7 +48,7 @@
     <!-- Puzzle Image -->
     <img id="img" src="https://i.imgur.com/TjOcWEA.jpeg" alt="Daily Puzzle" class="puzzle-img" loading="lazy">
     
-    <hr>
+    <hr><br>
     
     <!-- Answer -->
     <div class="container">
@@ -68,8 +65,8 @@
     
   </div>
   
-<script src="../js/wtf1.js" type="module"></script>
-<script src="../main.js" type="module"></script>
+  <script src="../js/wtf1.js" type="module"></script>
+  <script src="../main.js" type="module"></script>
 </body>
 
 </html>

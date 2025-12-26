@@ -1,3 +1,10 @@
+
+:root {
+  --header-text: white;
+  --share-icon: #26c6da;
+  --answer-text: #26c6da;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,13 +16,32 @@ body {
 
 }
 
-header > h2 {
+header  {
   padding: 5px 10px;
+  font-size: 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+header p {
+  color: var(--header-text);
+}
+
+
+header i {
+  border: 1.5px solid white;
+  padding: 6px 11px;
+  border-radius: 5px;
+  color: var(--share-icon);
+  animation: share-attention 3s ease-in-out infinite;
+
+}
+
 
 .puzzle-img {
   margin-top: 5px;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(255,255,255,0.05);
 }
@@ -27,8 +53,9 @@ header > h2 {
 }
 
 .solution-text {
-  font-size: 34px;
+  font-size: 8vw;
   color: #29b6f6;
+  color: var(--answer-text);
 }
 
 .container {
@@ -58,6 +85,8 @@ header > h2 {
   height: 100%;
   border: 5px solid transparent;
   border-top-color: #29b6f6; /* البوردر العمودي */
+  border-top-color: var(--answer-text);/* البوردر العمودي */
+
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -66,3 +95,11 @@ header > h2 {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@keyframes share-attention {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(0.9); }
+  40%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
