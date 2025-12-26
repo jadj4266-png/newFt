@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.getElementById("iconShare").addEventListener("click",async() => {
   const shareData = {
   title: document.title,
-  text: "جرب هذا اللغز 👇",
+  text: localized.question,
   url: window.location.href
 };
 
