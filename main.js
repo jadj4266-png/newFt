@@ -1,29 +1,36 @@
+/* =======================
+   Global Share Text
+======================= */
+let SHARE_TEXT = "";
+
+/* =======================
+   Main App
+======================= */
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    let answerObj;
-
-    const userLang = (navigator.language || "en").slice(0, 2);
-    const solutionSpan = document.getElementById('solution-text');
-    const pQuestion = document.getElementById("question");
-    const header = document.getElementById("header");
+    /* ========= Basic Elements ========= */
     const html = document.documentElement;
+    const header = document.getElementById("header");
+    const questionEl = document.getElementById("question");
+    const solutionEl = document.getElementById("solution-text");
 
-    if (!solutionSpan || !pQuestion) return;
+    if (!questionEl || !solutionEl) return;
+
+    /* ========= Language ========= */
+    const userLang = (navigator.language || "en").slice(0, 2);
 
     if (userLang === "ar") {
       html.lang = "ar";
       header?.style.setProperty("direction", "rtl");
     }
 
-    const name = location.pathname
-      .split(".")[0]
-      .split("/")
-      .pop();
+    /* ========= Dynamic Import ========= */
+    const pageName = location.pathname.split(".")[0].split("/").pop();
+    if (!pageName) return;
 
-    if (!name) throw new Error("اسم الصفحة غير صالح");
+    const path = `./js/${pageName}.js`;
 
-    const path = `./js/${name}.js`;
-
+    let answerObj;
     try {
       const module = await import(path);
       answerObj = module.default;
@@ -39,66 +46,75 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!localized) return;
 
-    pQuestion.textContent = localized.question;
-    solutionSpan.textContent = localized.answer;
+    /* ========= Render Content ========= */
+    questionEl.textContent = localized.question;
+    solutionEl.textContent = localized.answer;
+
+    SHARE_TEXT = localized.question;
 
     /* ========= Countdown ========= */
-    const answer = document.querySelector('.answer');
-    const countdown = document.getElementById('countdown');
-    const countText = document.getElementById('count-text');
+    const answerBox = document.querySelector(".answer");
+    const countdown = document.getElementById("countdown");
+    const countText = document.getElementById("count-text");
 
-    if (!answer || !countdown || !countText) return;
+    if (answerBox && countdown && countText) {
+      answerBox.style.display = "none";
+      let seconds = 5;
 
-    answer.style.display = 'none';
-    let seconds = 5;
+      const timer = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          countText.textContent = seconds;
+        } else {
+          clearInterval(timer);
+          countdown.style.display = "none";
+          answerBox.style.display = "block";
+        }
+      }, 1000);
+    }
 
-    const interval = setInterval(() => {
-      seconds--;
-      if (seconds > 0) {
-        countText.textContent = seconds;
-      } else {
-        clearInterval(interval);
-        countdown.style.display = 'none';
-        answer.style.display = 'block';
-      }
-    }, 1000);
+    /* ========= Share Button ========= */
+    const shareBtn = document.getElementById("iconShare");
 
-    /* ========= Ads (Monetag) ========= */
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async () => {
+        try {
+          const shareData = {
+            title: document.title,
+            text: SHARE_TEXT || "جرب هذا اللغز 👇",
+            url: window.location.href
+          };
+
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            await navigator.clipboard.writeText(shareData.url);
+            alert("📋 تم نسخ رابط الصفحة");
+          }
+        } catch (err) {
+          console.warn("تم إلغاء المشاركة", err);
+        }
+      });
+    }
+
+    /* ========= Monetag Ads ========= */
     setTimeout(() => {
       try {
-        const s1 = document.createElement('script');
-        s1.dataset.zone = '10310444';
-        s1.src = 'https://groleegni.net/vignette.min.js';
-        document.body.appendChild(s1);
+        const ad1 = document.createElement("script");
+        ad1.dataset.zone = "10310444";
+        ad1.src = "https://groleegni.net/vignette.min.js";
+        document.body.appendChild(ad1);
 
-        const s2 = document.createElement('script');
-        s2.dataset.zone = '10310654';
-        s2.src = 'https://gizokraijaw.net/vignette.min.js';
-        document.body.appendChild(s2);
+        const ad2 = document.createElement("script");
+        ad2.dataset.zone = "10310654";
+        ad2.src = "https://gizokraijaw.net/vignette.min.js";
+        document.body.appendChild(ad2);
       } catch (adErr) {
-        console.warn("خطأ في تحميل الإعلانات:", adErr);
+        console.warn("خطأ تحميل الإعلانات:", adErr);
       }
-    }, 300); // ⬅️ مهم جدًا
+    }, 3000); // تحميل الإعلانات بعد استقرار الصفحة
 
   } catch (fatal) {
     console.error("خطأ عام في الصفحة:", fatal);
   }
 });
-
-document.getElementById("iconShare").addEventListener("click",async() => {
-  const shareData = {
-  title: document.title,
-  text: localized.question,
-  url: window.location.href
-};
-
-try {
-  if (navigator.share) {
-    await navigator.share(shareData);
-  } else {
-    alert("❌❌❌❌❌❌❌❌❌")
-  }
-} catch (err) {
-  console.warn("تم إلغاء المشاركة", err);
-}
-})
